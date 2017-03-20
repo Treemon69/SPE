@@ -6,7 +6,22 @@
         xmlns:local="clr-namespace:SPE_Project"
         mc:Ignorable="d"
         Title="SPE" Height="557.143" Width="775">
-    <DockPanel>
-        <ListBox x:Name="listBox_Songs" Height="527.2" VerticalAlignment="Top" Width="100" DockPanel.Dock="Left"/>
-    </DockPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="497*"/>
+        </Grid.RowDefinitions>
+        <Menu x:Name="menu" Height="20" Margin="10,0,9.8,0" VerticalAlignment="Top" Background="#FF1F0505">
+            <MenuItem Background="#FF290A0A" Foreground="#FFF9F5F5" Header="Einstellungen" BorderBrush="#FF290A0A">
+                <MenuItem Header="Lieder aktualisieren" Background="#FF290A0A" BorderBrush="#FF290A0A"></MenuItem>
+                <Separator Background="#FF290A0A" BorderBrush="#FF290A0A"></Separator>
+                <MenuItem Header="Neue Quelle hinzufügen" Background="#FF290A0A" BorderBrush="#FF290A0A"></MenuItem>
+                <MenuItem Header="Neues Lied hinzufügen" Background="#FF290A0A" BorderBrush="#FF290A0A"></MenuItem>
+                <Separator Background="#FF290A0A" BorderBrush="#FF290A0A"></Separator>
+                <MenuItem Header="Beenden" Background="#FF290A0A" BorderBrush="#FF290A0A"></MenuItem>
+
+            </MenuItem>
+            
+        </Menu>
+    </Grid>
 </Window>

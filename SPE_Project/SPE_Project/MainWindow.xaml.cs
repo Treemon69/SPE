@@ -20,9 +20,12 @@ namespace SPE_Project
     /// </summary>
     public partial class MainWindow : Window
     {
+        Player P = new Player();
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        
     }
 }
