@@ -11,7 +11,7 @@
             <RowDefinition Height="30*"/>
             <RowDefinition Height="497*"/>
         </Grid.RowDefinitions>
-        <Menu x:Name="menu" Height="20" Margin="10,0,9.8,0" VerticalAlignment="Top" Background="#FF1F0505">
+        <Menu x:Name="menu" Height="20" Margin="0,0,-0.2,0" VerticalAlignment="Top" Background="#FF1F0505">
             <MenuItem Background="#FF290A0A" Foreground="#FFF9F5F5" Header="Einstellungen" BorderBrush="#FF290A0A">
                 <MenuItem Header="Lieder aktualisieren" Background="#FF290A0A" BorderBrush="#FF290A0A"></MenuItem>
                 <Separator Background="#FF290A0A" BorderBrush="#FF290A0A"></Separator>

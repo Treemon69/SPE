@@ -10,9 +10,11 @@ namespace SPE_Project
 {
     class Player
     {
+        Random r = new Random();
         MediaPlayer MediaP = new MediaPlayer();
         OpenFileDialog OFD=new OpenFileDialog();
-        private string lied = "C:\\Users\\krzes\\Music\\5 Seconds of Summer - She Looks So Perfect";
+        private string lied;
+        private string[] songs;
         //Standard (noWork)
         public void SelectPlanet()
         {
@@ -47,7 +49,18 @@ namespace SPE_Project
         //Unusual
 
         void nextBigBang() { }
-        void randomPlanets() { }
+
+        /// <summary>
+        /// Spielt ein zufälliges Lied ab
+        /// </summary>
+        /// <param name="a">Anzahl der Lieder</param>
+        void randomPlanets(int a)
+        {           
+            MediaP.Open((new Uri(songs[r.Next(0, a)])));
+            MediaP.Play();
+        }
+
+
 
     
 
