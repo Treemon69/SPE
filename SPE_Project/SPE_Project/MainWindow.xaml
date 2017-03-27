@@ -23,5 +23,8 @@
             </MenuItem>
             
         </Menu>
+        <Button x:Name="button_Play" Content="Play" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,467.6,0,0" Grid.Row="1" Click="button_Click"/>
+        <Button x:Name="button_Pause" Content="Pause" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="90,467.6,0,0" Grid.Row="1" Click="button_Pause_Click"/>
+        <Label x:Name="lblStatus" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,436.6,0,0" Grid.Row="1" Width="155"/>
     </Grid>
 </Window>

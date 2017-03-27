@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace SPE_Project
 {
@@ -24,8 +25,22 @@ namespace SPE_Project
         public MainWindow()
         {
             InitializeComponent();
+            lblStatus.Content = P.lblStatus;
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            P.selectLied();
+            P.startLied();
+            lblStatus.Content = P.lblStatus;
+
         }
 
         
+
+        private void button_Pause_Click(object sender, RoutedEventArgs e)
+        {
+            P.pauseLied();
+        }
     }
 }

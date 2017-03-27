@@ -5,31 +5,49 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using Microsoft.Win32;
+using  System.IO;
+using System.Windows.Threading;
 
 namespace SPE_Project
 {
     class Player
     {
+
+        // StreamWriter SW=new StreamWriter("Places.txt");
+        // StreamReader SR=new StreamReader("Places.txt");
+        DispatcherTimer timer = new DispatcherTimer();
+        
+
+
         Random r = new Random();
-        MediaPlayer MediaP = new MediaPlayer();
-        OpenFileDialog OFD=new OpenFileDialog();
-        private string lied;
+        private MediaPlayer MediaP = new MediaPlayer();
+        private OpenFileDialog OFD=new OpenFileDialog();
         private string[] songs;
+        public string lblStatus;
+
         //Standard (noWork)
-        public void SelectPlanet()
+        public void selectLied()
         {
-          //  OFD.OpenFile();
-            // OFD.Filter = "MP3  (.mp3)|*.mp3";
-            MediaP.Open(new Uri(lied)); 
+            
+            OFD.Filter = "MP3  (.mp3)|*.mp3";
+            if (OFD.ShowDialog() == true)
+                MediaP.Open(new Uri(OFD.FileName));
+         
         }
 
-        public void StartPlanet()
+        public void startLied()
         {
-            MediaP.Volume = 50;
+            MediaP.Volume = 100;
+            
             MediaP.Play();
+            lblStatus = Convert.ToString(MediaP.NaturalDuration);
+            System.Diagnostics.Debug.WriteLine(MediaP.NaturalDuration);
+
         }
 
-        public void PausePlanet()
+        
+
+        public void pauseLied()
         {
             
             MediaP.Pause();
@@ -37,24 +55,24 @@ namespace SPE_Project
 
         }
 
-        public void nextPlanet()
+        public void nextLied()
         {
             
             MediaP.Stop();
-            nextBigBang();
+            GetLieder();
             MediaP.Play();
 
         }
 
         //Unusual
 
-        void nextBigBang() { }
+        void GetLieder() { }
 
         /// <summary>
         /// Spielt ein zufälliges Lied ab
         /// </summary>
         /// <param name="a">Anzahl der Lieder</param>
-        void randomPlanets(int a)
+        void randomSong(int a)
         {           
             MediaP.Open((new Uri(songs[r.Next(0, a)])));
             MediaP.Play();
