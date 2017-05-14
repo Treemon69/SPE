@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,11 @@ namespace SPE_Project
         private void button_Pause_Click(object sender, RoutedEventArgs e)
         {
             P.pauseLied();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Process.Start("wmplayer.exe");
         }
     }
 }
